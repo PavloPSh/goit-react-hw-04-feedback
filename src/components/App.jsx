@@ -6,6 +6,9 @@ import { Statistics } from "./Statistics/Statistics";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Notification } from "./Notification/Notification";
 
+import { GlobalStyle } from "./GlobalStyles";
+
+
 
 export class App extends Component{
   state = {
@@ -53,19 +56,14 @@ export class App extends Component{
               neutral={neutral}
               bad={bad}
               total={total}
-              positiveFeedback={positiveFeedback} />}
+            positiveFeedback={positiveFeedback} />} 
         
+        <GlobalStyle />
+
       </Section>
+      
     )}
 }
 
 
-// export const App = () => {
-//   return (
-//     <div> 
-//       {/* <Feedback /> */}
-//       <Section title='Please leave feedback'>
-//       </Section>
-//     </div> 
-//   );
-// };
+
