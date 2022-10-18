@@ -7,6 +7,7 @@ import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Notification } from "./Notification/Notification";
 
 import { GlobalStyle } from "./GlobalStyles";
+import { Box } from "Box";
 
 
 
@@ -44,24 +45,25 @@ export class App extends Component{
     const positiveFeedback = this.countPositiveFeedbackPercentage();
 
     return (
-      <Section title='Please leave feedback'>
+      <Box display='flex' justifyContent='center' p='20px'>
 
-        <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback} />
-
-        
-        {!total
-          ? <Notification message="There is no feedback" />
-          : <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              total={total}
-            positiveFeedback={positiveFeedback} />} 
-        
-        <GlobalStyle />
-
-      </Section>
-      
+        <Section title='Please leave feedback'>
+          <Box display='flex' gridGap='20px'>
+            <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback} />
+          </Box>
+          {!total
+            ? <Notification message="There is no feedback" />
+            : <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={total}
+              positiveFeedback={positiveFeedback} />} 
+            
+          
+        </Section>
+      <GlobalStyle />
+      </Box>  
     )}
 }
 

@@ -1,9 +1,10 @@
+import { SectionWraper } from "./Section.styled"
 
 export const Section = ({ title, children }) => {
     return (
-        <div>
+        <SectionWraper>
             <h2>{title}</h2>
             {children}
-        </div>
+        </SectionWraper>
     )
 }
