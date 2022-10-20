@@ -45,12 +45,13 @@ export class App extends Component{
     const positiveFeedback = this.countPositiveFeedbackPercentage();
 
     return (
-      <Box display='flex' justifyContent='center' p='20px'>
+      <Box display='flex' justifyContent='center' p='24px'>
 
         <Section title='Please leave feedback'>
-          <Box display='flex' gridGap='20px'>
+          <Box display='flex' gridGap='20px' p='16px'>
             <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback} />
           </Box>
+
           {!total
             ? <Notification message="There is no feedback" />
             : <Statistics
@@ -60,8 +61,8 @@ export class App extends Component{
                 total={total}
               positiveFeedback={positiveFeedback} />} 
             
-          
         </Section>
+
       <GlobalStyle />
       </Box>  
     )}
